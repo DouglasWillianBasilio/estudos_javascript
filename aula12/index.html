@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você VOTA?</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-image: linear-gradient(to right, #C05666, #EAAFB8);
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.678);
+        }
+        p.um{
+            text-align: center;
+            color: white;
+            text-shadow: 1px 2px 3px black;
+        }
+        p.dois {
+            text-align: center;
+            font-size: 2em;
+        }
+        input{
+            font-size: 1em;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Descubra se na sua IDADE você é OBRIGADO a VOTAR ou NÃO</h1>
+    <p class="um">Neste site você descobre se você seu voto é obrigatorio ou não coloque sua <strong>IDADE</strong> abaixo e <strong>DESCUBRA</strong></p>
+
+    <p class="dois">Coloque aqui sua idade <input type="number" name="iidade" id="iidade"> <input type="button" value="Verificar" onclick="calcular()"></p>
+    <div id="res">
+
+    </div>
+
+    <script>
+        function calcular(){
+            var idd = document.querySelector("input#iidade")
+            var res = document.querySelector("div#res")
+            var idade = Number(idd.value)
+            res.innerHTML = ` <strong>A sua idade é  ${idade} !!</strong>  <br> `
+            if (idade < 16){
+                res.innerHTML += ` <strong>Você não vota</strong> `
+            } else if (idade < 18 || idade > 65){
+                res.innerHTML += ` <strong>Seu voto é opicional</strong> `
+            }else{
+                res.innerHTML += ` <strong>Seu voto é obrigatorio</strong> `
+            }
+            }
+        
+    </script>
+
+
+
+</body>
+</html>
